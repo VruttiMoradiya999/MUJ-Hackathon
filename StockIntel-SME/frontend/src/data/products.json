@@ -1,0 +1,468 @@
+{
+  "products": [
+    {
+      "product_id": "P001",
+      "sku": "MILK-001",
+      "name": "Milk 1L",
+      "category": "Dairy",
+      "brand": "Aavin",
+      "pricing": {
+        "cost_price": 45,
+        "selling_price": 55
+      },
+      "inventory": {
+        "current_stock": 50,
+        "reserved_stock": 5,
+        "available_stock": 45,
+        "reorder_level": 80
+      },
+      "supplier": {
+        "supplier_id": "S001",
+        "supplier_name": "ABC Distributors",
+        "minimum_order_quantity": 100,
+        "lead_time_days": 4
+      },
+      "shelf_life": {
+        "days": 7,
+        "expiry_tracking": true
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-11T10:30:00Z"
+    },
+    {
+      "product_id": "P002",
+      "sku": "BRD-002",
+      "name": "Whole Wheat Bread 400g",
+      "category": "Bakery",
+      "brand": "Britannia",
+      "pricing": {
+        "cost_price": 32,
+        "selling_price": 40
+      },
+      "inventory": {
+        "current_stock": 35,
+        "reserved_stock": 5,
+        "available_stock": 30,
+        "reorder_level": 60
+      },
+      "supplier": {
+        "supplier_id": "S002",
+        "supplier_name": "Modern Bakers Depot",
+        "minimum_order_quantity": 80,
+        "lead_time_days": 2
+      },
+      "shelf_life": {
+        "days": 5,
+        "expiry_tracking": true
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-11T09:45:00Z"
+    },
+    {
+      "product_id": "P003",
+      "sku": "BTR-003",
+      "name": "Salted Butter 500g",
+      "category": "Dairy",
+      "brand": "Amul",
+      "pricing": {
+        "cost_price": 240,
+        "selling_price": 275
+      },
+      "inventory": {
+        "current_stock": 42,
+        "reserved_stock": 2,
+        "available_stock": 40,
+        "reorder_level": 30
+      },
+      "supplier": {
+        "supplier_id": "S001",
+        "supplier_name": "ABC Distributors",
+        "minimum_order_quantity": 50,
+        "lead_time_days": 4
+      },
+      "shelf_life": {
+        "days": 120,
+        "expiry_tracking": true
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-11T08:15:00Z"
+    },
+    {
+      "product_id": "P004",
+      "sku": "TEA-004",
+      "name": "Masala Chai Tea 500g",
+      "category": "Beverages",
+      "brand": "Tata Tea",
+      "pricing": {
+        "cost_price": 220,
+        "selling_price": 270
+      },
+      "inventory": {
+        "current_stock": 140,
+        "reserved_stock": 10,
+        "available_stock": 130,
+        "reorder_level": 80
+      },
+      "supplier": {
+        "supplier_id": "S003",
+        "supplier_name": "Shree Ganesh Beverages",
+        "minimum_order_quantity": 60,
+        "lead_time_days": 5
+      },
+      "shelf_life": {
+        "days": 365,
+        "expiry_tracking": false
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-10T16:00:00Z"
+    },
+    {
+      "product_id": "P005",
+      "sku": "COF-005",
+      "name": "Instant Coffee 100g",
+      "category": "Beverages",
+      "brand": "Nescafé",
+      "pricing": {
+        "cost_price": 185,
+        "selling_price": 230
+      },
+      "inventory": {
+        "current_stock": 115,
+        "reserved_stock": 5,
+        "available_stock": 110,
+        "reorder_level": 50
+      },
+      "supplier": {
+        "supplier_id": "S003",
+        "supplier_name": "Shree Ganesh Beverages",
+        "minimum_order_quantity": 40,
+        "lead_time_days": 5
+      },
+      "shelf_life": {
+        "days": 540,
+        "expiry_tracking": false
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-10T11:20:00Z"
+    },
+    {
+      "product_id": "P006",
+      "sku": "CHP-006",
+      "name": "Potato Chips Salted 90g",
+      "category": "Snacks",
+      "brand": "Lay's",
+      "pricing": {
+        "cost_price": 28,
+        "selling_price": 35
+      },
+      "inventory": {
+        "current_stock": 24,
+        "reserved_stock": 4,
+        "available_stock": 20,
+        "reorder_level": 75
+      },
+      "supplier": {
+        "supplier_id": "S004",
+        "supplier_name": "Apex FMCG Logistics",
+        "minimum_order_quantity": 120,
+        "lead_time_days": 3
+      },
+      "shelf_life": {
+        "days": 90,
+        "expiry_tracking": true
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-11T10:10:00Z"
+    },
+    {
+      "product_id": "P007",
+      "sku": "BSC-007",
+      "name": "Marie Biscuits 250g",
+      "category": "Snacks",
+      "brand": "Parle",
+      "pricing": {
+        "cost_price": 25,
+        "selling_price": 30
+      },
+      "inventory": {
+        "current_stock": 310,
+        "reserved_stock": 10,
+        "available_stock": 300,
+        "reorder_level": 120
+      },
+      "supplier": {
+        "supplier_id": "S004",
+        "supplier_name": "Apex FMCG Logistics",
+        "minimum_order_quantity": 100,
+        "lead_time_days": 3
+      },
+      "shelf_life": {
+        "days": 180,
+        "expiry_tracking": false
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-09T14:40:00Z"
+    },
+    {
+      "product_id": "P008",
+      "sku": "SOP-008",
+      "name": "Neem & Turmeric Soap 125g",
+      "category": "Personal Care",
+      "brand": "Himalaya",
+      "pricing": {
+        "cost_price": 42,
+        "selling_price": 52
+      },
+      "inventory": {
+        "current_stock": 180,
+        "reserved_stock": 0,
+        "available_stock": 180,
+        "reorder_level": 60
+      },
+      "supplier": {
+        "supplier_id": "S005",
+        "supplier_name": "Zenith Care Supplies",
+        "minimum_order_quantity": 72,
+        "lead_time_days": 6
+      },
+      "shelf_life": {
+        "days": 720,
+        "expiry_tracking": false
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-08T18:00:00Z"
+    },
+    {
+      "product_id": "P009",
+      "sku": "SHM-009",
+      "name": "Herbal Anti-Dandruff Shampoo 400ml",
+      "category": "Personal Care",
+      "brand": "Biotique",
+      "pricing": {
+        "cost_price": 190,
+        "selling_price": 250
+      },
+      "inventory": {
+        "current_stock": 45,
+        "reserved_stock": 5,
+        "available_stock": 40,
+        "reorder_level": 50
+      },
+      "supplier": {
+        "supplier_id": "S005",
+        "supplier_name": "Zenith Care Supplies",
+        "minimum_order_quantity": 36,
+        "lead_time_days": 6
+      },
+      "shelf_life": {
+        "days": 720,
+        "expiry_tracking": false
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-10T12:00:00Z"
+    },
+    {
+      "product_id": "P010",
+      "sku": "DSH-010",
+      "name": "Dishwash Liquid Gel 750ml",
+      "category": "Household",
+      "brand": "Vim",
+      "pricing": {
+        "cost_price": 130,
+        "selling_price": 165
+      },
+      "inventory": {
+        "current_stock": 88,
+        "reserved_stock": 8,
+        "available_stock": 80,
+        "reorder_level": 60
+      },
+      "supplier": {
+        "supplier_id": "S004",
+        "supplier_name": "Apex FMCG Logistics",
+        "minimum_order_quantity": 48,
+        "lead_time_days": 3
+      },
+      "shelf_life": {
+        "days": 720,
+        "expiry_tracking": false
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-10T15:30:00Z"
+    },
+    {
+      "product_id": "P011",
+      "sku": "FLR-011",
+      "name": "Floor Cleaner Citrus 1L",
+      "category": "Household",
+      "brand": "Lizol",
+      "pricing": {
+        "cost_price": 175,
+        "selling_price": 215
+      },
+      "inventory": {
+        "current_stock": 290,
+        "reserved_stock": 10,
+        "available_stock": 280,
+        "reorder_level": 70
+      },
+      "supplier": {
+        "supplier_id": "S004",
+        "supplier_name": "Apex FMCG Logistics",
+        "minimum_order_quantity": 50,
+        "lead_time_days": 3
+      },
+      "shelf_life": {
+        "days": 720,
+        "expiry_tracking": false
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-07T11:00:00Z"
+    },
+    {
+      "product_id": "P012",
+      "sku": "SPK-012",
+      "name": "Bluetooth Speaker Stone 350",
+      "category": "Electronics",
+      "brand": "boAt",
+      "pricing": {
+        "cost_price": 1100,
+        "selling_price": 1599
+      },
+      "inventory": {
+        "current_stock": 220,
+        "reserved_stock": 5,
+        "available_stock": 215,
+        "reorder_level": 25
+      },
+      "supplier": {
+        "supplier_id": "S006",
+        "supplier_name": "TechVolt Electronics",
+        "minimum_order_quantity": 20,
+        "lead_time_days": 8
+      },
+      "shelf_life": {
+        "days": 1095,
+        "expiry_tracking": false
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-06T10:00:00Z"
+    },
+    {
+      "product_id": "P013",
+      "sku": "CBL-013",
+      "name": "Fast Charging Cable Type-C 65W",
+      "category": "Electronics",
+      "brand": "Portronics",
+      "pricing": {
+        "cost_price": 140,
+        "selling_price": 299
+      },
+      "inventory": {
+        "current_stock": 18,
+        "reserved_stock": 3,
+        "available_stock": 15,
+        "reorder_level": 50
+      },
+      "supplier": {
+        "supplier_id": "S006",
+        "supplier_name": "TechVolt Electronics",
+        "minimum_order_quantity": 50,
+        "lead_time_days": 8
+      },
+      "shelf_life": {
+        "days": 1095,
+        "expiry_tracking": false
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-11T07:45:00Z"
+    },
+    {
+      "product_id": "P014",
+      "sku": "GHE-014",
+      "name": "Pure Cow Ghee Jar 1L",
+      "category": "Dairy",
+      "brand": "Nandini",
+      "pricing": {
+        "cost_price": 540,
+        "selling_price": 620
+      },
+      "inventory": {
+        "current_stock": 16,
+        "reserved_stock": 2,
+        "available_stock": 14,
+        "reorder_level": 40
+      },
+      "supplier": {
+        "supplier_id": "S001",
+        "supplier_name": "ABC Distributors",
+        "minimum_order_quantity": 24,
+        "lead_time_days": 4
+      },
+      "shelf_life": {
+        "days": 270,
+        "expiry_tracking": true
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-11T09:15:00Z"
+    },
+    {
+      "product_id": "P015",
+      "sku": "OIL-015",
+      "name": "Refined Sunflower Oil Pouch 1L",
+      "category": "Household",
+      "brand": "Fortune",
+      "pricing": {
+        "cost_price": 135,
+        "selling_price": 160
+      },
+      "inventory": {
+        "current_stock": 340,
+        "reserved_stock": 20,
+        "available_stock": 320,
+        "reorder_level": 100
+      },
+      "supplier": {
+        "supplier_id": "S004",
+        "supplier_name": "Apex FMCG Logistics",
+        "minimum_order_quantity": 80,
+        "lead_time_days": 3
+      },
+      "shelf_life": {
+        "days": 270,
+        "expiry_tracking": true
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-08T14:20:00Z"
+    },
+    {
+      "product_id": "P016",
+      "sku": "ALM-016",
+      "name": "Almond Milk Unsweetened 1L",
+      "category": "Dairy",
+      "brand": "Raw Pressery",
+      "pricing": {
+        "cost_price": 180,
+        "selling_price": 240
+      },
+      "inventory": {
+        "current_stock": 22,
+        "reserved_stock": 2,
+        "available_stock": 20,
+        "reorder_level": 30
+      },
+      "supplier": {
+        "supplier_id": "S003",
+        "supplier_name": "Shree Ganesh Beverages",
+        "minimum_order_quantity": 24,
+        "lead_time_days": 5
+      },
+      "shelf_life": {
+        "days": 180,
+        "expiry_tracking": true
+      },
+      "status": "ACTIVE",
+      "last_updated": "2026-09-11T06:30:00Z"
+    }
+  ]
+}

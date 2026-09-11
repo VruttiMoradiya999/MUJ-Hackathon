@@ -1,0 +1,224 @@
+{
+  "products_forecast": {
+    "P001": {
+      "product_id": "P001",
+      "product_name": "Milk 1L",
+      "sku": "MILK-001",
+      "category": "Dairy",
+      "average_daily_demand": 35.7,
+      "forecast_confidence": "89%",
+      "trend": "Increasing (+8.4% WoW)",
+      "trend_direction": "up",
+      "seasonality_detected": "High weekend morning surges (Sat-Sun +34%)",
+      "summary": {
+        "7": { "predicted_units": 250, "estimated_revenue": "₹13,750", "recommended_buffer": 40 },
+        "14": { "predicted_units": 495, "estimated_revenue": "₹27,225", "recommended_buffer": 75 },
+        "30": { "predicted_units": 1070, "estimated_revenue": "₹58,850", "recommended_buffer": 150 }
+      },
+      "series_7": [
+        { "date": "Sep 05", "actual": 34, "predicted": 33, "is_future": false },
+        { "date": "Sep 06", "actual": 39, "predicted": 38, "is_future": false },
+        { "date": "Sep 07", "actual": 48, "predicted": 46, "is_future": false },
+        { "date": "Sep 08", "actual": 45, "predicted": 44, "is_future": false },
+        { "date": "Sep 09", "actual": 32, "predicted": 33, "is_future": false },
+        { "date": "Sep 10", "actual": 36, "predicted": 35, "is_future": false },
+        { "date": "Sep 11 (Today)", "actual": 35, "predicted": 36, "is_future": false },
+        { "date": "Sep 12", "actual": null, "predicted": 38, "is_future": true },
+        { "date": "Sep 13", "actual": null, "predicted": 49, "is_future": true },
+        { "date": "Sep 14", "actual": null, "predicted": 47, "is_future": true },
+        { "date": "Sep 15", "actual": null, "predicted": 34, "is_future": true },
+        { "date": "Sep 16", "actual": null, "predicted": 35, "is_future": true },
+        { "date": "Sep 17", "actual": null, "predicted": 37, "is_future": true },
+        { "date": "Sep 18", "actual": null, "predicted": 39, "is_future": true }
+      ],
+      "series_14": [
+        { "date": "Sep 01", "actual": 32, "predicted": 31, "is_future": false },
+        { "date": "Sep 03", "actual": 35, "predicted": 34, "is_future": false },
+        { "date": "Sep 05", "actual": 34, "predicted": 33, "is_future": false },
+        { "date": "Sep 07", "actual": 48, "predicted": 46, "is_future": false },
+        { "date": "Sep 09", "actual": 32, "predicted": 33, "is_future": false },
+        { "date": "Sep 11", "actual": 35, "predicted": 36, "is_future": false },
+        { "date": "Sep 13", "actual": null, "predicted": 49, "is_future": true },
+        { "date": "Sep 15", "actual": null, "predicted": 34, "is_future": true },
+        { "date": "Sep 17", "actual": null, "predicted": 37, "is_future": true },
+        { "date": "Sep 19", "actual": null, "predicted": 42, "is_future": true },
+        { "date": "Sep 21", "actual": null, "predicted": 48, "is_future": true },
+        { "date": "Sep 23", "actual": null, "predicted": 36, "is_future": true },
+        { "date": "Sep 25", "actual": null, "predicted": 38, "is_future": true }
+      ],
+      "series_30": [
+        { "date": "Aug 20", "actual": 29, "predicted": 30, "is_future": false },
+        { "date": "Aug 25", "actual": 33, "predicted": 32, "is_future": false },
+        { "date": "Aug 30", "actual": 36, "predicted": 35, "is_future": false },
+        { "date": "Sep 04", "actual": 34, "predicted": 33, "is_future": false },
+        { "date": "Sep 09", "actual": 33, "predicted": 34, "is_future": false },
+        { "date": "Sep 11", "actual": 35, "predicted": 36, "is_future": false },
+        { "date": "Sep 16", "actual": null, "predicted": 36, "is_future": true },
+        { "date": "Sep 21", "actual": null, "predicted": 44, "is_future": true },
+        { "date": "Sep 26", "actual": null, "predicted": 38, "is_future": true },
+        { "date": "Oct 01", "actual": null, "predicted": 40, "is_future": true },
+        { "date": "Oct 06", "actual": null, "predicted": 42, "is_future": true },
+        { "date": "Oct 11", "actual": null, "predicted": 45, "is_future": true }
+      ]
+    },
+    "P002": {
+      "product_id": "P002",
+      "product_name": "Whole Wheat Bread 400g",
+      "sku": "BRD-002",
+      "category": "Bakery",
+      "average_daily_demand": 22.0,
+      "forecast_confidence": "91%",
+      "trend": "Stable (±2% variance)",
+      "trend_direction": "stable",
+      "seasonality_detected": "Breakfast peak 7:00 AM - 9:30 AM",
+      "summary": {
+        "7": { "predicted_units": 154, "estimated_revenue": "₹6,160", "recommended_buffer": 25 },
+        "14": { "predicted_units": 308, "estimated_revenue": "₹12,320", "recommended_buffer": 45 },
+        "30": { "predicted_units": 660, "estimated_revenue": "₹26,400", "recommended_buffer": 90 }
+      },
+      "series_7": [
+        { "date": "Sep 05", "actual": 21, "predicted": 22, "is_future": false },
+        { "date": "Sep 06", "actual": 24, "predicted": 23, "is_future": false },
+        { "date": "Sep 07", "actual": 28, "predicted": 27, "is_future": false },
+        { "date": "Sep 08", "actual": 26, "predicted": 25, "is_future": false },
+        { "date": "Sep 09", "actual": 20, "predicted": 21, "is_future": false },
+        { "date": "Sep 10", "actual": 22, "predicted": 22, "is_future": false },
+        { "date": "Sep 11 (Today)", "actual": 22, "predicted": 22, "is_future": false },
+        { "date": "Sep 12", "actual": null, "predicted": 23, "is_future": true },
+        { "date": "Sep 13", "actual": null, "predicted": 28, "is_future": true },
+        { "date": "Sep 14", "actual": null, "predicted": 27, "is_future": true },
+        { "date": "Sep 15", "actual": null, "predicted": 21, "is_future": true },
+        { "date": "Sep 16", "actual": null, "predicted": 22, "is_future": true },
+        { "date": "Sep 17", "actual": null, "predicted": 22, "is_future": true },
+        { "date": "Sep 18", "actual": null, "predicted": 23, "is_future": true }
+      ],
+      "series_14": [
+        { "date": "Sep 01", "actual": 20, "predicted": 21, "is_future": false },
+        { "date": "Sep 04", "actual": 22, "predicted": 22, "is_future": false },
+        { "date": "Sep 07", "actual": 27, "predicted": 26, "is_future": false },
+        { "date": "Sep 10", "actual": 22, "predicted": 22, "is_future": false },
+        { "date": "Sep 13", "actual": null, "predicted": 28, "is_future": true },
+        { "date": "Sep 16", "actual": null, "predicted": 22, "is_future": true },
+        { "date": "Sep 19", "actual": null, "predicted": 23, "is_future": true },
+        { "date": "Sep 22", "actual": null, "predicted": 24, "is_future": true },
+        { "date": "Sep 25", "actual": null, "predicted": 22, "is_future": true }
+      ],
+      "series_30": [
+        { "date": "Aug 20", "actual": 20, "predicted": 20, "is_future": false },
+        { "date": "Aug 28", "actual": 21, "predicted": 21, "is_future": false },
+        { "date": "Sep 05", "actual": 22, "predicted": 22, "is_future": false },
+        { "date": "Sep 11", "actual": 22, "predicted": 22, "is_future": false },
+        { "date": "Sep 18", "actual": null, "predicted": 23, "is_future": true },
+        { "date": "Sep 26", "actual": null, "predicted": 23, "is_future": true },
+        { "date": "Oct 04", "actual": null, "predicted": 22, "is_future": true },
+        { "date": "Oct 11", "actual": null, "predicted": 23, "is_future": true }
+      ]
+    },
+    "P012": {
+      "product_id": "P012",
+      "product_name": "Bluetooth Speaker Stone 350",
+      "sku": "SPK-012",
+      "category": "Electronics",
+      "average_daily_demand": 0.3,
+      "forecast_confidence": "74%",
+      "trend": "Decreasing (-24% MoM)",
+      "trend_direction": "down",
+      "seasonality_detected": "Diwali festival spike expected next month",
+      "summary": {
+        "7": { "predicted_units": 2, "estimated_revenue": "₹3,198", "recommended_buffer": 0 },
+        "14": { "predicted_units": 5, "estimated_revenue": "₹7,995", "recommended_buffer": 0 },
+        "30": { "predicted_units": 12, "estimated_revenue": "₹19,188", "recommended_buffer": 2 }
+      },
+      "series_7": [
+        { "date": "Sep 05", "actual": 0, "predicted": 0.4, "is_future": false },
+        { "date": "Sep 06", "actual": 1, "predicted": 0.3, "is_future": false },
+        { "date": "Sep 07", "actual": 0, "predicted": 0.5, "is_future": false },
+        { "date": "Sep 08", "actual": 0, "predicted": 0.3, "is_future": false },
+        { "date": "Sep 09", "actual": 1, "predicted": 0.3, "is_future": false },
+        { "date": "Sep 10", "actual": 0, "predicted": 0.3, "is_future": false },
+        { "date": "Sep 11 (Today)", "actual": 0, "predicted": 0.3, "is_future": false },
+        { "date": "Sep 12", "actual": null, "predicted": 0.3, "is_future": true },
+        { "date": "Sep 13", "actual": null, "predicted": 0.4, "is_future": true },
+        { "date": "Sep 14", "actual": null, "predicted": 0.4, "is_future": true },
+        { "date": "Sep 15", "actual": null, "predicted": 0.2, "is_future": true },
+        { "date": "Sep 16", "actual": null, "predicted": 0.3, "is_future": true },
+        { "date": "Sep 17", "actual": null, "predicted": 0.3, "is_future": true },
+        { "date": "Sep 18", "actual": null, "predicted": 0.3, "is_future": true }
+      ],
+      "series_14": [
+        { "date": "Sep 01", "actual": 1, "predicted": 0.4, "is_future": false },
+        { "date": "Sep 04", "actual": 0, "predicted": 0.3, "is_future": false },
+        { "date": "Sep 07", "actual": 0, "predicted": 0.5, "is_future": false },
+        { "date": "Sep 10", "actual": 0, "predicted": 0.3, "is_future": false },
+        { "date": "Sep 13", "actual": null, "predicted": 0.4, "is_future": true },
+        { "date": "Sep 16", "actual": null, "predicted": 0.3, "is_future": true },
+        { "date": "Sep 19", "actual": null, "predicted": 0.3, "is_future": true },
+        { "date": "Sep 22", "actual": null, "predicted": 0.4, "is_future": true },
+        { "date": "Sep 25", "actual": null, "predicted": 0.3, "is_future": true }
+      ],
+      "series_30": [
+        { "date": "Aug 20", "actual": 1, "predicted": 0.5, "is_future": false },
+        { "date": "Aug 28", "actual": 0, "predicted": 0.4, "is_future": false },
+        { "date": "Sep 05", "actual": 0, "predicted": 0.4, "is_future": false },
+        { "date": "Sep 11", "actual": 0, "predicted": 0.3, "is_future": false },
+        { "date": "Sep 18", "actual": null, "predicted": 0.3, "is_future": true },
+        { "date": "Sep 26", "actual": null, "predicted": 0.4, "is_future": true },
+        { "date": "Oct 04", "actual": null, "predicted": 0.5, "is_future": true },
+        { "date": "Oct 11", "actual": null, "predicted": 0.6, "is_future": true }
+      ]
+    },
+    "P014": {
+      "product_id": "P014",
+      "product_name": "Pure Cow Ghee Jar 1L",
+      "sku": "GHE-014",
+      "category": "Dairy",
+      "average_daily_demand": 8.8,
+      "forecast_confidence": "86%",
+      "trend": "Increasing (+14% Festive prep)",
+      "trend_direction": "up",
+      "seasonality_detected": "Festival sweet preparation surge",
+      "summary": {
+        "7": { "predicted_units": 62, "estimated_revenue": "₹38,440", "recommended_buffer": 15 },
+        "14": { "predicted_units": 130, "estimated_revenue": "₹80,600", "recommended_buffer": 28 },
+        "30": { "predicted_units": 290, "estimated_revenue": "₹1,79,800", "recommended_buffer": 55 }
+      },
+      "series_7": [
+        { "date": "Sep 05", "actual": 7, "predicted": 8, "is_future": false },
+        { "date": "Sep 06", "actual": 9, "predicted": 8, "is_future": false },
+        { "date": "Sep 07", "actual": 11, "predicted": 10, "is_future": false },
+        { "date": "Sep 08", "actual": 10, "predicted": 9, "is_future": false },
+        { "date": "Sep 09", "actual": 8, "predicted": 8, "is_future": false },
+        { "date": "Sep 10", "actual": 9, "predicted": 9, "is_future": false },
+        { "date": "Sep 11 (Today)", "actual": 9, "predicted": 9, "is_future": false },
+        { "date": "Sep 12", "actual": null, "predicted": 9, "is_future": true },
+        { "date": "Sep 13", "actual": null, "predicted": 12, "is_future": true },
+        { "date": "Sep 14", "actual": null, "predicted": 11, "is_future": true },
+        { "date": "Sep 15", "actual": null, "predicted": 8, "is_future": true },
+        { "date": "Sep 16", "actual": null, "predicted": 9, "is_future": true },
+        { "date": "Sep 17", "actual": null, "predicted": 9, "is_future": true },
+        { "date": "Sep 18", "actual": null, "predicted": 10, "is_future": true }
+      ],
+      "series_14": [
+        { "date": "Sep 01", "actual": 6, "predicted": 7, "is_future": false },
+        { "date": "Sep 04", "actual": 7, "predicted": 7, "is_future": false },
+        { "date": "Sep 07", "actual": 11, "predicted": 10, "is_future": false },
+        { "date": "Sep 10", "actual": 9, "predicted": 9, "is_future": false },
+        { "date": "Sep 13", "actual": null, "predicted": 12, "is_future": true },
+        { "date": "Sep 16", "actual": null, "predicted": 9, "is_future": true },
+        { "date": "Sep 19", "actual": null, "predicted": 10, "is_future": true },
+        { "date": "Sep 22", "actual": null, "predicted": 11, "is_future": true },
+        { "date": "Sep 25", "actual": null, "predicted": 10, "is_future": true }
+      ],
+      "series_30": [
+        { "date": "Aug 20", "actual": 6, "predicted": 6, "is_future": false },
+        { "date": "Aug 28", "actual": 7, "predicted": 7, "is_future": false },
+        { "date": "Sep 05", "actual": 8, "predicted": 8, "is_future": false },
+        { "date": "Sep 11", "actual": 9, "predicted": 9, "is_future": false },
+        { "date": "Sep 18", "actual": null, "predicted": 10, "is_future": true },
+        { "date": "Sep 26", "actual": null, "predicted": 11, "is_future": true },
+        { "date": "Oct 04", "actual": null, "predicted": 13, "is_future": true },
+        { "date": "Oct 11", "actual": null, "predicted": 14, "is_future": true }
+      ]
+    }
+  }
+}

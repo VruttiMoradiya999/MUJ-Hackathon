@@ -1,0 +1,166 @@
+{
+  "bundles": [
+    {
+      "product_id": "P001",
+      "product_name": "Milk 1L",
+      "sku": "MILK-001",
+      "category": "Dairy",
+      "brand": "Aavin",
+      "total_transactions_analyzed": 1420,
+      "basket_penetration": "42%",
+      "frequently_bought_together": [
+        {
+          "product_id": "P002",
+          "name": "Whole Wheat Bread 400g",
+          "sku": "BRD-002",
+          "category": "Bakery",
+          "co_purchase_rate": 72,
+          "avg_basket_units": 1.2,
+          "relationship_strength": "High Affinity",
+          "merchandising_tip": "Position fresh bread shelves directly beside dairy refrigerated display"
+        },
+        {
+          "product_id": "P003",
+          "name": "Salted Butter 500g",
+          "sku": "BTR-003",
+          "category": "Dairy",
+          "co_purchase_rate": 48,
+          "avg_basket_units": 1.0,
+          "relationship_strength": "Medium Affinity",
+          "merchandising_tip": "Bundle in 'Sunday Breakfast Kit' promo with 8% combo discount"
+        },
+        {
+          "product_id": "P004",
+          "name": "Masala Chai Tea 500g",
+          "sku": "TEA-004",
+          "category": "Beverages",
+          "co_purchase_rate": 39,
+          "avg_basket_units": 1.0,
+          "relationship_strength": "Medium Affinity",
+          "merchandising_tip": "Print receipt promo coupons for Tea when 2L+ milk is purchased"
+        }
+      ],
+      "recommended_combo": {
+        "title": "Morning Breakfast Basket",
+        "items": ["Milk 1L", "Whole Wheat Bread 400g", "Salted Butter 500g"],
+        "combined_regular_price": 370,
+        "bundle_price": 349,
+        "estimated_monthly_uplift": "₹18,400"
+      }
+    },
+    {
+      "product_id": "P004",
+      "product_name": "Masala Chai Tea 500g",
+      "sku": "TEA-004",
+      "category": "Beverages",
+      "brand": "Tata Tea",
+      "total_transactions_analyzed": 860,
+      "basket_penetration": "26%",
+      "frequently_bought_together": [
+        {
+          "product_id": "P007",
+          "name": "Marie Biscuits 250g",
+          "sku": "BSC-007",
+          "category": "Snacks",
+          "co_purchase_rate": 68,
+          "avg_basket_units": 1.5,
+          "relationship_strength": "High Affinity",
+          "merchandising_tip": "Cross-display biscuits in hanging clip-strips along the tea aisle"
+        },
+        {
+          "product_id": "P001",
+          "name": "Milk 1L",
+          "sku": "MILK-001",
+          "category": "Dairy",
+          "co_purchase_rate": 58,
+          "avg_basket_units": 1.1,
+          "relationship_strength": "High Affinity",
+          "merchandising_tip": "Essential daily staples pairing"
+        },
+        {
+          "product_id": "P005",
+          "name": "Instant Coffee 100g",
+          "sku": "COF-005",
+          "category": "Beverages",
+          "co_purchase_rate": 22,
+          "avg_basket_units": 1.0,
+          "relationship_strength": "Low Affinity",
+          "merchandising_tip": "Hot beverages aisle synergy"
+        }
+      ],
+      "recommended_combo": {
+        "title": "Tea Time Special Pack",
+        "items": ["Masala Chai Tea 500g", "Marie Biscuits 250g"],
+        "combined_regular_price": 300,
+        "bundle_price": 279,
+        "estimated_monthly_uplift": "₹12,600"
+      }
+    },
+    {
+      "product_id": "P012",
+      "product_name": "Bluetooth Speaker Stone 350",
+      "sku": "SPK-012",
+      "category": "Electronics",
+      "brand": "boAt",
+      "total_transactions_analyzed": 210,
+      "basket_penetration": "8%",
+      "frequently_bought_together": [
+        {
+          "product_id": "P013",
+          "name": "Fast Charging Cable Type-C 65W",
+          "sku": "CBL-013",
+          "category": "Electronics",
+          "co_purchase_rate": 64,
+          "avg_basket_units": 1.3,
+          "relationship_strength": "High Affinity",
+          "merchandising_tip": "Offer cable at ₹99 flat when customer purchases the speaker"
+        }
+      ],
+      "recommended_combo": {
+        "title": "Power & Sound Audio Bundle",
+        "items": ["Bluetooth Speaker Stone 350", "Fast Charging Cable Type-C 65W"],
+        "combined_regular_price": 1898,
+        "bundle_price": 1699,
+        "estimated_monthly_uplift": "₹34,000 (Helps liquidate excess speaker stock)"
+      }
+    },
+    {
+      "product_id": "P010",
+      "product_name": "Dishwash Liquid Gel 750ml",
+      "sku": "DSH-010",
+      "category": "Household",
+      "brand": "Vim",
+      "total_transactions_analyzed": 590,
+      "basket_penetration": "19%",
+      "frequently_bought_together": [
+        {
+          "product_id": "P011",
+          "name": "Floor Cleaner Citrus 1L",
+          "sku": "FLR-011",
+          "category": "Household",
+          "co_purchase_rate": 54,
+          "avg_basket_units": 1.0,
+          "relationship_strength": "High Affinity",
+          "merchandising_tip": "Create 'Sparkling Home Essentials' monthly combo pack"
+        },
+        {
+          "product_id": "P008",
+          "name": "Neem & Turmeric Soap 125g",
+          "sku": "SOP-008",
+          "category": "Personal Care",
+          "co_purchase_rate": 31,
+          "avg_basket_units": 2.0,
+          "relationship_strength": "Medium Affinity",
+          "merchandising_tip": "Monthly grocery restocking co-purchase"
+        }
+      ],
+      "recommended_combo": {
+        "title": "Home Hygiene Combo",
+        "items": ["Dishwash Liquid Gel 750ml", "Floor Cleaner Citrus 1L"],
+        "combined_regular_price": 380,
+        "bundle_price": 339,
+        "estimated_monthly_uplift": "₹9,200"
+      }
+    }
+  ]
+}

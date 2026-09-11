@@ -1,0 +1,209 @@
+{
+  "substitutions": [
+    {
+      "product_id": "P001",
+      "product_name": "Milk 1L",
+      "brand": "Aavin",
+      "sku": "MILK-001",
+      "category": "Dairy",
+      "current_stock": 50,
+      "stock_status": "CRITICAL LOW (1.4 Days)",
+      "price": 55,
+      "recommended_substitutes": [
+        {
+          "substitute_id": "SUB-001-A",
+          "name": "Amul Taaza Homogenised Toned Milk 1L",
+          "brand": "Amul",
+          "similarity_score": 94,
+          "available_stock": 65,
+          "stock_status": "IN_STOCK",
+          "price": 56,
+          "price_difference": "+₹1",
+          "key_match_attributes": ["Same 1L volume", "3.0% Fat content", "Long shelf life carton"],
+          "recommendation_tip": "Seamless direct swap for daily tea, coffee, and cereal consumption."
+        },
+        {
+          "substitute_id": "SUB-001-B",
+          "name": "Nandini Toned Milk 1L",
+          "brand": "Nandini",
+          "similarity_score": 88,
+          "available_stock": 42,
+          "stock_status": "IN_STOCK",
+          "price": 54,
+          "price_difference": "-₹1",
+          "key_match_attributes": ["Fresh pasteurized pouch", "Similar flavor profile", "Local consumer favorite"],
+          "recommendation_tip": "Slightly cheaper alternative; popular with budget-conscious households."
+        },
+        {
+          "substitute_id": "SUB-001-C",
+          "product_id": "P016",
+          "name": "Almond Milk Unsweetened 1L",
+          "brand": "Raw Pressery",
+          "similarity_score": 68,
+          "available_stock": 20,
+          "stock_status": "LOW_STOCK",
+          "price": 240,
+          "price_difference": "+₹185",
+          "key_match_attributes": ["Lactose-free alternative", "Premium health segment"],
+          "recommendation_tip": "Offer to vegan or lactose-intolerant shoppers when regular milk runs out."
+        }
+      ]
+    },
+    {
+      "product_id": "P002",
+      "product_name": "Whole Wheat Bread 400g",
+      "brand": "Britannia",
+      "sku": "BRD-002",
+      "category": "Bakery",
+      "current_stock": 35,
+      "stock_status": "CRITICAL LOW (1.6 Days)",
+      "price": 40,
+      "recommended_substitutes": [
+        {
+          "substitute_id": "SUB-002-A",
+          "name": "Modern 100% Whole Wheat Bread 400g",
+          "brand": "Modern",
+          "similarity_score": 96,
+          "available_stock": 55,
+          "stock_status": "IN_STOCK",
+          "price": 42,
+          "price_difference": "+₹2",
+          "key_match_attributes": ["100% Atta formulation", "Zero maida", "Exact slice count (18 slices)"],
+          "recommendation_tip": "Closest matching texture and dietary benefits."
+        },
+        {
+          "substitute_id": "SUB-002-B",
+          "name": "English Oven Multigrain Bread 400g",
+          "brand": "English Oven",
+          "similarity_score": 82,
+          "available_stock": 30,
+          "stock_status": "IN_STOCK",
+          "price": 50,
+          "price_difference": "+₹10",
+          "key_match_attributes": ["Added oats & sunflower seeds", "High fiber"],
+          "recommendation_tip": "Upsell opportunity for health-conscious breakfast buyers."
+        },
+        {
+          "substitute_id": "SUB-002-C",
+          "name": "Britannia Milk Bread 400g",
+          "brand": "Britannia",
+          "similarity_score": 75,
+          "available_stock": 8,
+          "stock_status": "CRITICAL_LOW",
+          "price": 38,
+          "price_difference": "-₹2",
+          "key_match_attributes": ["Same brand trust", "Sweeter soft crumb"],
+          "recommendation_tip": "Suggest when brown bread is completely depleted."
+        }
+      ]
+    },
+    {
+      "product_id": "P013",
+      "product_name": "Fast Charging Cable Type-C 65W",
+      "brand": "Portronics",
+      "sku": "CBL-013",
+      "category": "Electronics",
+      "current_stock": 18,
+      "stock_status": "CRITICAL STOCKOUT RISK",
+      "price": 299,
+      "recommended_substitutes": [
+        {
+          "substitute_id": "SUB-013-A",
+          "name": "boAt Deuce USB 300 Type-C Cable 1.5m",
+          "brand": "boAt",
+          "similarity_score": 91,
+          "available_stock": 38,
+          "stock_status": "IN_STOCK",
+          "price": 349,
+          "price_difference": "+₹50",
+          "key_match_attributes": ["Braided nylon exterior", "Fast PD support", "2-year warranty"],
+          "recommendation_tip": "Top selling durable brand; customer will happily pay slight premium."
+        },
+        {
+          "substitute_id": "SUB-013-B",
+          "name": "Ambrane Unbreakable 3A Fast Charging Cable",
+          "brand": "Ambrane",
+          "similarity_score": 85,
+          "available_stock": 25,
+          "stock_status": "IN_STOCK",
+          "price": 279,
+          "price_difference": "-₹20",
+          "key_match_attributes": ["Quick Charge 3.0", "Tangle-free design"],
+          "recommendation_tip": "Affordable replacement option with reliable build."
+        }
+      ]
+    },
+    {
+      "product_id": "P014",
+      "product_name": "Pure Cow Ghee Jar 1L",
+      "brand": "Nandini",
+      "sku": "GHE-014",
+      "category": "Dairy",
+      "current_stock": 16,
+      "stock_status": "CRITICAL LOW (1.8 Days)",
+      "price": 620,
+      "recommended_substitutes": [
+        {
+          "substitute_id": "SUB-014-A",
+          "name": "Amul Pure Ghee 1L Tin",
+          "brand": "Amul",
+          "similarity_score": 95,
+          "available_stock": 28,
+          "stock_status": "IN_STOCK",
+          "price": 630,
+          "price_difference": "+₹10",
+          "key_match_attributes": ["Aromatic granular texture", "Traditional churned method", "1L Tin packaging"],
+          "recommendation_tip": "Standard market benchmark ghee; instant customer acceptance."
+        },
+        {
+          "substitute_id": "SUB-014-B",
+          "name": "Aashirvaad Svasti Pure Cow Ghee 1L",
+          "brand": "Aashirvaad",
+          "similarity_score": 92,
+          "available_stock": 22,
+          "stock_status": "IN_STOCK",
+          "price": 645,
+          "price_difference": "+₹25",
+          "key_match_attributes": ["Special slow cook process", "Rich golden color"],
+          "recommendation_tip": "Premium option with strong festive appeal."
+        }
+      ]
+    },
+    {
+      "product_id": "P005",
+      "product_name": "Instant Coffee 100g",
+      "brand": "Nescafé",
+      "sku": "COF-005",
+      "category": "Beverages",
+      "current_stock": 115,
+      "stock_status": "HEALTHY",
+      "price": 230,
+      "recommended_substitutes": [
+        {
+          "substitute_id": "SUB-005-A",
+          "name": "BRU Instant Coffee Jar 100g",
+          "brand": "BRU",
+          "similarity_score": 93,
+          "available_stock": 70,
+          "stock_status": "IN_STOCK",
+          "price": 225,
+          "price_difference": "-₹5",
+          "key_match_attributes": ["Coffee-Chicory blend (70:30)", "Popular South Indian roast taste"],
+          "recommendation_tip": "Direct rival; popular for rich aroma with milk."
+        },
+        {
+          "substitute_id": "SUB-005-B",
+          "name": "Tata Coffee Grand 100g Jar",
+          "brand": "Tata",
+          "similarity_score": 86,
+          "available_stock": 45,
+          "stock_status": "IN_STOCK",
+          "price": 215,
+          "price_difference": "-₹15",
+          "key_match_attributes": ["Flavor-locked decoction crystals", "Smooth taste"],
+          "recommendation_tip": "Great value alternative."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "kpis": {
+    "total_products": 1480,
+    "active_skus": 1480,
+    "inventory_value_formatted": "₹42.5L",
+    "inventory_value_raw": 4250000,
+    "stockout_risks": 18,
+    "overstock_items": 34,
+    "orders_to_place": 27,
+    "potential_lost_sales_formatted": "₹1.45L",
+    "potential_lost_sales_raw": 145000,
+    "excess_inventory_formatted": "₹6.20L",
+    "excess_inventory_raw": 620000
+  },
+  "attention_today": [
+    {
+      "id": "ATTN-01",
+      "priority": "HIGH",
+      "product_id": "P001",
+      "product_name": "Milk 1L",
+      "sku": "MILK-001",
+      "issue": "Stockout in 1.4 days",
+      "metric_label": "Potential Lost Sales",
+      "metric_value": "₹3,300",
+      "recommended_action": "Order 200 units immediately (4 days lead time)",
+      "badge_type": "danger"
+    },
+    {
+      "id": "ATTN-02",
+      "priority": "HIGH",
+      "product_id": "P014",
+      "product_name": "Pure Cow Ghee Jar 1L",
+      "sku": "GHE-014",
+      "issue": "Stockout in 1.8 days",
+      "metric_label": "Potential Lost Sales",
+      "metric_value": "₹9,920",
+      "recommended_action": "Order 48 units from ABC Distributors",
+      "badge_type": "danger"
+    },
+    {
+      "id": "ATTN-03",
+      "priority": "HIGH",
+      "product_id": "P013",
+      "product_name": "Fast Charging Cable Type-C 65W",
+      "sku": "CBL-013",
+      "issue": "Stockout in 2.1 days",
+      "metric_label": "Lead Time Risk",
+      "metric_value": "8 days supplier delay",
+      "recommended_action": "Trigger emergency replenishment with S006",
+      "badge_type": "danger"
+    },
+    {
+      "id": "ATTN-04",
+      "priority": "MEDIUM",
+      "product_id": "P012",
+      "product_name": "Bluetooth Speaker Stone 350",
+      "sku": "SPK-012",
+      "issue": "750 days of inventory locked",
+      "metric_label": "Excess Capital",
+      "metric_value": "₹2.2L locked",
+      "recommended_action": "Halt repeat purchase orders; launch bundle campaign",
+      "badge_type": "warning"
+    },
+    {
+      "id": "ATTN-05",
+      "priority": "MEDIUM",
+      "product_id": "P011",
+      "product_name": "Floor Cleaner Citrus 1L",
+      "sku": "FLR-011",
+      "issue": "320 days of stock holding",
+      "metric_label": "Excess Stock",
+      "metric_value": "₹42,000 excess",
+      "recommended_action": "Review reorder point and delay next cycle",
+      "badge_type": "warning"
+    }
+  ],
+  "inventory_health": [
+    { "name": "Healthy Stock", "value": 1145, "percentage": 77.4, "color": "#10b981" },
+    { "name": "Overstock", "value": 182, "percentage": 12.3, "color": "#f59e0b" },
+    { "name": "Low Stock / Risk", "value": 118, "percentage": 8.0, "color": "#ef4444" },
+    { "name": "Critical Stockout", "value": 35, "percentage": 2.3, "color": "#b91c1c" }
+  ],
+  "demand_trend": [
+    { "date": "Sep 04", "actual": 1420, "forecast": 1380, "orders": 128 },
+    { "date": "Sep 05", "actual": 1510, "forecast": 1460, "orders": 135 },
+    { "date": "Sep 06", "actual": 1680, "forecast": 1620, "orders": 154 },
+    { "date": "Sep 07", "actual": 1890, "forecast": 1840, "orders": 172 },
+    { "date": "Sep 08", "actual": 1740, "forecast": 1710, "orders": 160 },
+    { "date": "Sep 09", "actual": 1620, "forecast": 1650, "orders": 148 },
+    { "date": "Sep 10", "actual": 1810, "forecast": 1790, "orders": 165 },
+    { "date": "Sep 11 (Today)", "actual": 1150, "forecast": 1860, "orders": 105 }
+  ],
+  "stockout_risk_products": [
+    {
+      "product_id": "P001",
+      "name": "Milk 1L",
+      "sku": "MILK-001",
+      "current_stock": 50,
+      "daily_burn": 35.7,
+      "days_left": 1.4,
+      "lead_time": 4,
+      "impact": "₹3,300 lost sales",
+      "action": "Order 200 units"
+    },
+    {
+      "product_id": "P002",
+      "name": "Whole Wheat Bread 400g",
+      "sku": "BRD-002",
+      "current_stock": 35,
+      "daily_burn": 22.0,
+      "days_left": 1.6,
+      "lead_time": 2,
+      "impact": "₹1,440 lost sales",
+      "action": "Order 120 units"
+    },
+    {
+      "product_id": "P014",
+      "name": "Pure Cow Ghee Jar 1L",
+      "sku": "GHE-014",
+      "current_stock": 16,
+      "daily_burn": 8.8,
+      "days_left": 1.8,
+      "lead_time": 4,
+      "impact": "₹9,920 lost sales",
+      "action": "Order 48 units"
+    },
+    {
+      "product_id": "P013",
+      "name": "Fast Charging Cable 65W",
+      "sku": "CBL-013",
+      "current_stock": 18,
+      "daily_burn": 8.5,
+      "days_left": 2.1,
+      "lead_time": 8,
+      "impact": "₹5,380 lost sales",
+      "action": "Order 80 units"
+    },
+    {
+      "product_id": "P006",
+      "name": "Potato Chips Salted 90g",
+      "sku": "CHP-006",
+      "current_stock": 24,
+      "daily_burn": 10.2,
+      "days_left": 2.3,
+      "lead_time": 3,
+      "impact": "₹840 lost sales",
+      "action": "Order 150 units"
+    }
+  ],
+  "overstock_products": [
+    {
+      "product_id": "P012",
+      "name": "Bluetooth Speaker Stone 350",
+      "sku": "SPK-012",
+      "current_stock": 220,
+      "days_of_inventory": 750,
+      "excess_units": 195,
+      "excess_value": "₹2,14,500",
+      "action": "Freeze reorders, create bundle"
+    },
+    {
+      "product_id": "P011",
+      "name": "Floor Cleaner Citrus 1L",
+      "sku": "FLR-011",
+      "current_stock": 290,
+      "days_of_inventory": 320,
+      "excess_units": 220,
+      "excess_value": "₹38,500",
+      "action": "Push promotion discount"
+    },
+    {
+      "product_id": "P015",
+      "name": "Sunflower Cooking Oil 1L",
+      "sku": "OIL-015",
+      "current_stock": 340,
+      "days_of_inventory": 180,
+      "excess_units": 180,
+      "excess_value": "₹24,300",
+      "action": "Adjust minimum stock rule"
+    },
+    {
+      "product_id": "P007",
+      "name": "Marie Biscuits 250g",
+      "sku": "BSC-007",
+      "current_stock": 310,
+      "days_of_inventory": 140,
+      "excess_units": 150,
+      "excess_value": "₹3,750",
+      "action": "Pair with Tea bundle"
+    }
+  ]
+}

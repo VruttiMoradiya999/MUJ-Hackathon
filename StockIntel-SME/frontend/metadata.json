@@ -1,0 +1,6 @@
+{
+  "name": "Inventory Intelligence Dashboard",
+  "description": "Inventory intelligence, reorder recommendations, and stockout risk management dashboard for SME retailers and distributors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
