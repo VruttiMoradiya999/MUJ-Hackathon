@@ -1,9 +1,11 @@
+import os
+import dj_database_url
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "django-insecure-stockintel-dev-key-change-in-prod"
-DEBUG = True
+SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-stockintel-dev-key-change-in-prod")
+DEBUG = os.environ.get("DEBUG", "True") == "True"
 ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
@@ -51,10 +53,11 @@ TEMPLATES = [
 WSGI_APPLICATION = "stockintel_backend.wsgi.application"
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    "default": dj_database_url.config(
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+        conn_max_age=600,
+        ssl_require=True,
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -84,6 +87,10 @@ CORS_ALLOWED_ORIGINS = [
 ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = True  # for easy local dev
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://stockintel-sme.onrender.com",
+]
 
 REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": [
