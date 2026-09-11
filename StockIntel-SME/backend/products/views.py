@@ -1,11 +1,15 @@
 import csv
 import io
+from decimal import Decimal
+from django.db import transaction
 from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
-from .models import Product, Supplier
-from .serializers import ProductSerializer
+from rest_framework import status, serializers as drf_serializers
+from .models import Product, Supplier, Sale, SaleItem
+from .serializers import (
+    ProductSerializer, SaleSerializer, SaleCreateSerializer,
+)
 
 
 class ProductListView(APIView):
@@ -107,3 +111,100 @@ class ProductImportView(APIView):
             },
             status=status.HTTP_200_OK,
         )
+
+
+class SaleListCreateView(APIView):
+    """
+    GET  /api/sales/  -> list sales, newest first
+    POST /api/sales/  -> create a sale (a paid bill) and atomically deduct stock
+
+    Expected POST body:
+    {
+        "customer_name": "Walk-in",
+        "payment_method": "CASH",
+        "discount_amount": 0,
+        "tax_amount": 0,
+        "items": [
+            {"barcode": "8901030865123", "quantity": 2},
+            {"product_code": "P002", "quantity": 1}
+        ]
+    }
+    """
+
+    def get(self, request):
+        sales = Sale.objects.prefetch_related("items__product").all()
+        return Response({"sales": SaleSerializer(sales, many=True).data})
+
+    def post(self, request):
+        input_serializer = SaleCreateSerializer(data=request.data)
+        input_serializer.is_valid(raise_exception=True)
+        data = input_serializer.validated_data
+
+        with transaction.atomic():
+            sale = Sale.objects.create(
+                customer_name=data["customer_name"],
+                customer_phone=data["customer_phone"],
+                payment_method=data["payment_method"],
+                discount_amount=data["discount_amount"],
+                tax_amount=data["tax_amount"],
+                notes=data["notes"],
+            )
+
+            subtotal = Decimal("0.00")
+            sale_items = []
+
+            for item in data["items"]:
+                lookup = (
+                    {"product_code": item["product_code"]}
+                    if item.get("product_code")
+                    else {"barcode": item["barcode"]}
+                )
+
+                # select_for_update locks this product row for the duration of
+                # the transaction, so two simultaneous sales can't both read
+                # the same stock and both succeed (preventing overselling).
+                try:
+                    product = Product.objects.select_for_update().get(**lookup)
+                except Product.DoesNotExist:
+                    raise drf_serializers.ValidationError(
+                        {"items": [f"No product found for {lookup}."]}
+                    )
+
+                quantity = item["quantity"]
+                available = product.current_stock - product.reserved_stock
+                if quantity > available:
+                    raise drf_serializers.ValidationError(
+                        {
+                            "items": [
+                                f"Insufficient stock for '{product.name}' "
+                                f"(available: {available}, requested: {quantity})."
+                            ]
+                        }
+                    )
+
+                unit_price = product.selling_price
+                line_total = (unit_price * quantity).quantize(Decimal("0.01"))
+
+                sale_items.append(
+                    SaleItem(
+                        sale=sale,
+                        product=product,
+                        quantity=quantity,
+                        unit_price=unit_price,
+                        line_total=line_total,
+                    )
+                )
+
+                product.current_stock = product.current_stock - quantity
+                product.save(update_fields=["current_stock"])
+
+                subtotal += line_total
+
+            SaleItem.objects.bulk_create(sale_items)
+
+            sale.subtotal = subtotal
+            sale.total_amount = subtotal - sale.discount_amount + sale.tax_amount
+            sale.save(update_fields=["subtotal", "total_amount"])
+
+        sale.refresh_from_db()
+        return Response(SaleSerializer(sale).data, status=status.HTTP_201_CREATED)
