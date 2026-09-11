@@ -16,8 +16,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "django_filters",
     "corsheaders",
     "products",
+    "inventory",
 ]
 
 MIDDLEWARE = [
@@ -56,7 +58,7 @@ DATABASES = {
     "default": dj_database_url.config(
         default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=600,
-        ssl_require=True,
+        ssl_require=os.environ.get("DATABASE_URL", "").startswith("postgres"),
     )
 }
 
@@ -95,5 +97,8 @@ CSRF_TRUSTED_ORIGINS = [
 REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": [
         "rest_framework.renderers.JSONRenderer",
+    ],
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
     ],
 }
