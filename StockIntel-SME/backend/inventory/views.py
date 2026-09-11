@@ -1,9 +1,11 @@
 from rest_framework import viewsets, status, filters
 from rest_framework.decorators import action
+from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
 from django.db.models import Count, Sum, F
+from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from datetime import timedelta
 
@@ -17,7 +19,7 @@ from .serializers import (
 class SupplierViewSet(viewsets.ModelViewSet):
     queryset = Supplier.objects.all()
     serializer_class = SupplierSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]  # TODO: tighten once auth is added
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['is_active', 'country']
     search_fields = ['name', 'contact_person', 'email']
@@ -35,7 +37,7 @@ class SupplierViewSet(viewsets.ModelViewSet):
 class AlertViewSet(viewsets.ModelViewSet):
     queryset = Alert.objects.select_related('product', 'supplier', 'created_by').all()
     serializer_class = AlertSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]  # TODO: tighten once auth is added
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['status', 'severity', 'alert_type', 'product', 'supplier']
     search_fields = ['title', 'message']
@@ -51,7 +53,8 @@ class AlertViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_400_BAD_REQUEST
             )
         alert.status = 'acknowledged'
-        alert.acknowledged_by = request.user
+        if request.user.is_authenticated:
+            alert.acknowledged_by = request.user
         alert.acknowledged_at = timezone.now()
         alert.save()
         return Response(AlertSerializer(alert).data)
@@ -83,7 +86,7 @@ class AlertViewSet(viewsets.ModelViewSet):
 class RecommendationViewSet(viewsets.ModelViewSet):
     queryset = Recommendation.objects.select_related('product', 'supplier').all()
     serializer_class = RecommendationSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]  # TODO: tighten once auth is added
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['status', 'recommendation_type', 'product', 'supplier']
     search_fields = ['title', 'description']
@@ -94,7 +97,8 @@ class RecommendationViewSet(viewsets.ModelViewSet):
     def accept(self, request, pk=None):
         rec = self.get_object()
         rec.status = 'accepted'
-        rec.decided_by = request.user
+        if request.user.is_authenticated:
+            rec.decided_by = request.user
         rec.decided_at = timezone.now()
         rec.save()
         return Response(RecommendationSerializer(rec).data)
@@ -103,7 +107,8 @@ class RecommendationViewSet(viewsets.ModelViewSet):
     def reject(self, request, pk=None):
         rec = self.get_object()
         rec.status = 'rejected'
-        rec.decided_by = request.user
+        if request.user.is_authenticated:
+            rec.decided_by = request.user
         rec.decided_at = timezone.now()
         rec.save()
         return Response(RecommendationSerializer(rec).data)
@@ -112,7 +117,8 @@ class RecommendationViewSet(viewsets.ModelViewSet):
     def implement(self, request, pk=None):
         rec = self.get_object()
         rec.status = 'implemented'
-        rec.decided_by = request.user
+        if request.user.is_authenticated:
+            rec.decided_by = request.user
         rec.decided_at = timezone.now()
         rec.save()
         return Response(RecommendationSerializer(rec).data)
@@ -121,7 +127,7 @@ class RecommendationViewSet(viewsets.ModelViewSet):
 class ForecastViewSet(viewsets.ModelViewSet):
     queryset = Forecast.objects.select_related('product').all()
     serializer_class = ForecastSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]  # TODO: tighten once auth is added
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['product', 'method', 'forecast_date']
     ordering_fields = ['forecast_date', 'predicted_demand', 'created_at']
@@ -146,12 +152,33 @@ class ForecastViewSet(viewsets.ModelViewSet):
         return Response(results)
 
 
+class ProductForecastView(APIView):
+    """
+    Forecasts for a single product, looked up by its product_code
+    (e.g. GET /api/forecast/P001), rather than by Forecast row id.
+    """
+    permission_classes = [AllowAny]
+
+    def get(self, request, product_code):
+        from products.models import Product
+
+        product = get_object_or_404(Product, product_code=product_code)
+        forecasts = product.forecasts.all().order_by('-forecast_date')
+        serializer = ForecastSerializer(forecasts, many=True)
+        return Response({
+            'product_code': product.product_code,
+            'product_name': product.name,
+            'latest': serializer.data[0] if serializer.data else None,
+            'forecasts': serializer.data,
+        })
+
+
 class DashboardViewSet(viewsets.ViewSet):
     """
     Aggregated dashboard endpoints.
     Pure analytics - no single model instance required.
     """
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]  # TODO: tighten once auth is added
 
     def list(self, request):
         """Main dashboard overview"""
@@ -160,8 +187,8 @@ class DashboardViewSet(viewsets.ViewSet):
         today = timezone.now().date()
 
         total_products = Product.objects.count()
-        low_stock = Product.objects.filter(stock_quantity__lte=F('reorder_level')).count()
-        out_of_stock = Product.objects.filter(stock_quantity=0).count()
+        low_stock = Product.objects.filter(current_stock__lte=F('reorder_level')).count()
+        out_of_stock = Product.objects.filter(current_stock=0).count()
 
         active_alerts = Alert.objects.filter(status='active').count()
         critical_alerts = Alert.objects.filter(status='active', severity='critical').count()
@@ -171,7 +198,7 @@ class DashboardViewSet(viewsets.ViewSet):
 
         inventory_value = (
             Product.objects.aggregate(
-                total=Sum(F('stock_quantity') * F('unit_price'))
+                total=Sum(F('current_stock') * F('cost_price'))
             )['total'] or 0
         )
 
@@ -222,13 +249,13 @@ class DashboardViewSet(viewsets.ViewSet):
             defaults={
                 'total_products': Product.objects.count(),
                 'low_stock_count': Product.objects.filter(
-                    stock_quantity__lte=F('reorder_level')
+                    current_stock__lte=F('reorder_level')
                 ).count(),
-                'out_of_stock_count': Product.objects.filter(stock_quantity=0).count(),
+                'out_of_stock_count': Product.objects.filter(current_stock=0).count(),
                 'total_alerts_active': Alert.objects.filter(status='active').count(),
                 'total_suppliers': Supplier.objects.filter(is_active=True).count(),
                 'inventory_value': Product.objects.aggregate(
-                    total=Sum(F('stock_quantity') * F('unit_price'))
+                    total=Sum(F('current_stock') * F('cost_price'))
                 )['total'] or 0,
             },
         )
